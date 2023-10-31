@@ -15,7 +15,7 @@ while (true)
 
     GenerateRandomMaze();
 
-    if (!IsMazeSolvable(MazeData.Maze))
+    if (!IsMazeSolvable(MazeData.Maze)) // Labirent Çözülebilirmi?
     {
         continue;
     }

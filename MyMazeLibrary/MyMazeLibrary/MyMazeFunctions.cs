@@ -90,7 +90,7 @@ namespace MyMazeLibrary
 
         }
 
-        public static bool IsMazeSolvable(string[,] Maze)
+        public static bool IsMazeSolvable(string[,] Maze) // Labirent Çözülebilirmi?
         {
             int rows = Maze.GetLength(0);
             int columns = Maze.GetLength(1);

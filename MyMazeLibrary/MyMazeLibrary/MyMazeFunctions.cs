@@ -1,5 +1,5 @@
-﻿using Console = Colorful.Console; // Renk Eklentisi
-using Colorful; // Renk Eklentisi
+﻿using Console = Colorful.Console; // Renk Eklentisi+
+using Colorful; // Renk Eklentisi+
 using System.Drawing;
 using System.Xml.Linq;
 using System.Collections;

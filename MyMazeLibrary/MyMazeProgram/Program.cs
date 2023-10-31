@@ -1,8 +1,8 @@
 ﻿using MyMazeLibrary;
 using System.Drawing;
 using static MyMazeLibrary.MazeFunctions;
-using Console = Colorful.Console; // Renk Eklentisi
-using Colorful; // Renk Eklentisi
+using Console = Colorful.Console; // Renk Eklentisi+
+using Colorful; // Renk Eklentisi+
 
 MazeData.completedLevels = 0;
 

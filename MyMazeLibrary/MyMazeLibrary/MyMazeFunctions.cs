@@ -1,5 +1,5 @@
-﻿using Console = Colorful.Console; // Renk Eklentisi+
-using Colorful; // Renk Eklentisi+
+﻿using Console = Colorful.Console; // Renk Eklentisi
+using Colorful; // Renk Eklentisi
 using System.Drawing;
 using System.Xml.Linq;
 using System.Collections;
@@ -16,9 +16,12 @@ namespace MyMazeLibrary
             public static int playerColumn { get; set; }
             public static int exitLine { get; set; }
             public static int exitColumn { get; set; }
-            public static int matrixSize { get; set; }
             public static int playerStep { get; set; }
+            public static int newLine { get; set; }
+            public static int newColumn { get; set; }
             public static int completedLevels { get; set; }
+            public static int matrixSize { get; set; }
+            public static bool MazeVisible { get; set; }
         }
 
         public static void GenerateRandomMaze()
@@ -54,7 +57,7 @@ namespace MyMazeLibrary
             MazeData.Maze[MazeData.exitLine, MazeData.exitColumn] = "X";
         }
 
-        public static void PrintMaze()
+        public static void PrintMaze(bool BackgroundColorChange)
         {
 
             Color DefaultColor = Color.LightGray;
@@ -85,6 +88,69 @@ namespace MyMazeLibrary
                 Console.WriteLine();
             }
 
+        }
+
+        public static bool IsMazeSolvable(string[,] Maze)
+        {
+            int rows = Maze.GetLength(0);
+            int columns = Maze.GetLength(1);
+            bool[,] visited = new bool[rows, columns];
+
+            Queue<(int, int)> queue = new Queue<(int, int)>();
+            int startX = 0;
+            int startY = 0;
+
+            for (int i = 0; i < rows; i++)
+            {
+                for (int j = 0; j < columns; j++)
+                {
+                    if (Maze[i, j] == "☺")
+                    {
+                        startX = i;
+                        startY = j;
+                        break;
+                    }
+                }
+            }
+
+            queue.Enqueue((startX, startY));
+            visited[startX, startY] = true;
+
+            while (queue.Count > 0)
+            {
+                (int x, int y) = queue.Dequeue();
+
+                if (Maze[x, y] == "X")
+                {
+                    return true;
+                }
+
+                if (x > 0 && (Maze[x - 1, y] == "." || Maze[x - 1, y] == "X") && !visited[x - 1, y])
+                {
+                    queue.Enqueue((x - 1, y));
+                    visited[x - 1, y] = true;
+                }
+
+                if (x < rows - 1 && (Maze[x + 1, y] == "." || Maze[x + 1, y] == "X") && !visited[x + 1, y])
+                {
+                    queue.Enqueue((x + 1, y));
+                    visited[x + 1, y] = true;
+                }
+
+                if (y > 0 && (Maze[x, y - 1] == "." || Maze[x, y - 1] == "X") && !visited[x, y - 1])
+                {
+                    queue.Enqueue((x, y - 1));
+                    visited[x, y - 1] = true;
+                }
+
+                if (y < columns - 1 && (Maze[x, y + 1] == "." || Maze[x, y + 1] == "X") && !visited[x, y + 1])
+                {
+                    queue.Enqueue((x, y + 1));
+                    visited[x, y + 1] = true;
+                }
+            }
+
+            return false;
         }
     }
 }

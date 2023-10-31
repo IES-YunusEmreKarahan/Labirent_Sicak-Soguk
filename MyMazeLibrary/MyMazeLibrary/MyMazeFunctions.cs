@@ -22,6 +22,9 @@ namespace MyMazeLibrary
             public static int completedLevels { get; set; }
             public static int matrixSize { get; set; }
             public static bool MazeVisible { get; set; }
+            public static bool showclue { get; set; }
+            public static List<string> ClueList { get; set; }
+
         }
 
         public static void GenerateRandomMaze()
@@ -57,7 +60,7 @@ namespace MyMazeLibrary
             MazeData.Maze[MazeData.exitLine, MazeData.exitColumn] = "X";
         }
 
-        public static void PrintMaze(bool BackgroundColorChange)
+        public static void PrintMaze(bool BackgroundColorChange, int shortestPathLength, int exitDistanceLength)
         {
 
             Color DefaultColor = Color.LightGray;
@@ -74,23 +77,86 @@ namespace MyMazeLibrary
 
             Console.Clear();
 
-            string[,] Maze = MazeData.Maze;
-
-            int rows = Maze.GetLength(0);
-            int columns = Maze.GetLength(1);
-
-            for (int i = 0; i < rows; i++)
+            if (BackgroundColorChange == true)
             {
-                for (int j = 0; j < columns; j++)
+                if (shortestPathLength <= 2)
                 {
-                    Console.WriteStyled(Maze[i, j] + " ", styleSheet);
+                    Console.BackgroundColor = Color.FromArgb(47, 76, 4);
                 }
-                Console.WriteLine();
+                else if (shortestPathLength <= 5)
+                {
+                    Console.BackgroundColor = Color.FromArgb(140, 134, 0);
+                }
+                else if (shortestPathLength <= 8)
+                {
+                    Console.BackgroundColor = Color.FromArgb(140, 68, 0);
+                }
+                else if (shortestPathLength > 8)
+                {
+                    Console.BackgroundColor = Color.FromArgb(73, 8, 0);
+                }
+                Console.Clear();
             }
 
+            if (MazeData.MazeVisible == true)
+            {
+                string[,] Maze = MazeData.Maze;
+
+                int rows = Maze.GetLength(0);
+                int columns = Maze.GetLength(1);
+
+                for (int i = 0; i < rows; i++)
+                {
+                    for (int j = 0; j < columns; j++)
+                    {
+                        Console.WriteStyled(Maze[i, j] + " ", styleSheet);
+                    }
+                    Console.WriteLine();
+                }
+
+            }
+            else
+            {
+                if (exitDistanceLength <= 2)
+                {
+                    Console.ForegroundColor = Color.FromArgb(196, 16, 0);
+                    Console.WriteLine("Çok Sıcak");
+                    Console.ForegroundColor = DefaultColor;
+                }
+                else if (exitDistanceLength <= 5)
+                {
+                    Console.ForegroundColor = Color.FromArgb(216, 199, 49);
+                    Console.WriteLine("Sıcak");
+                    Console.ForegroundColor = DefaultColor;
+                }
+                else if (exitDistanceLength <= 8)
+                {
+                    Console.ForegroundColor = Color.FromArgb(120, 214, 198);
+                    Console.WriteLine("Soğuk");
+                    Console.ForegroundColor = DefaultColor;
+                }
+                else if (exitDistanceLength > 8)
+                {
+                    Console.ForegroundColor = Color.FromArgb(48, 133, 195);
+                    Console.WriteLine("Çok Soğuk");
+                    Console.ForegroundColor = DefaultColor;
+                }
+
+                Console.WriteLine("Mesafe: " + exitDistanceLength);
+
+
+                if (MazeData.showclue == true)
+                {
+                    Console.WriteLine("(ipucu aktif) İzlemeniz gereken yol:");
+                    foreach (string ipucu in MazeData.ClueList)
+                    {
+                        Console.Write(ipucu + " ");
+                    }
+                }
+            }
         }
 
-        public static bool IsMazeSolvable(string[,] Maze) // Labirent Çözülebilirmi?
+        public static bool IsMazeSolvable(string[,] Maze)
         {
             int rows = Maze.GetLength(0);
             int columns = Maze.GetLength(1);
@@ -152,5 +218,6 @@ namespace MyMazeLibrary
 
             return false;
         }
+
     }
 }

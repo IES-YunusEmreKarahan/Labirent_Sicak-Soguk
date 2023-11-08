@@ -17,16 +17,46 @@
 - P (Oyuncunun çıkışa ışınlanmasını sağlar)
 - Q (oyundan çıkış yapmak için kullanılır)
 
-## 10x10 Labirent Sonucları
-**1. Test A* (A Star)**
-- <img src="screenshots/Astar1.png" alt="alt text" width="320" height="180">
-- <img src="screenshots/Astar2.png" alt="alt text" width="320" height="180">
-- <img src="screenshots/Astar3.png" alt="alt text" width="320" height="180">
-**2. Test Greedy**
-- <img src="screenshots/Greedy1.png" alt="alt text" width="320" height="180">
-- <img src="screenshots/Greedy2.png" alt="alt text" width="320" height="180">
-- <img src="screenshots/Greedy3.png" alt="alt text" width="320" height="180">
-**3.Test BFS**
-- <img src="screenshots/BFS1.png" alt="alt text" width="320" height="180">
-- <img src="screenshots/BFS2.png" alt="alt text" width="320" height="180">
-- <img src="screenshots/BFS3.png" alt="alt text" width="320" height="180">
+## Algoritmaların 10x10 İzlediği Yollar
+### **A Star**
+- 1.Test: <img src="https://github.com/IES-YunusEmreKarahan/Labirent_Sicak-Soguk/blob/main/MyMazeLibraryPerformans/screenshots/Astar1.PNG" alt="resim" width="auto" height="180" align="top">
+
+- 2.Test: <img src="https://github.com/IES-YunusEmreKarahan/Labirent_Sicak-Soguk/blob/main/MyMazeLibraryPerformans/screenshots/Astar2.PNG" alt="resim" width="auto" height="180" align="top">
+
+- 3.Test: <img src="https://github.com/IES-YunusEmreKarahan/Labirent_Sicak-Soguk/blob/main/MyMazeLibraryPerformans/screenshots/Astar3.PNG" alt="resim" width="auto" height="180" align="top">
+
+### **Greedy**
+- 1.Test: <img src="https://github.com/IES-YunusEmreKarahan/Labirent_Sicak-Soguk/blob/main/MyMazeLibraryPerformans/screenshots/Greedy1.PNG" alt="resim" width="auto" height="180" align="top">
+
+- 2.Test: <img src="https://github.com/IES-YunusEmreKarahan/Labirent_Sicak-Soguk/blob/main/MyMazeLibraryPerformans/screenshots/Greedy2.PNG" alt="resim" width="auto" height="180" align="top">
+
+- 3.Test: <img src="https://github.com/IES-YunusEmreKarahan/Labirent_Sicak-Soguk/blob/main/MyMazeLibraryPerformans/screenshots/Greedy3.PNG" alt="resim" width="auto" height="180" align="top">
+
+### **BFS**
+- 1.Test: <img src="https://github.com/IES-YunusEmreKarahan/Labirent_Sicak-Soguk/blob/main/MyMazeLibraryPerformans/screenshots/BFS1.PNG" alt="resim" width="auto" height="180" align="top">
+
+- 2.Test: <img src="https://github.com/IES-YunusEmreKarahan/Labirent_Sicak-Soguk/blob/main/MyMazeLibraryPerformans/screenshots/BFS2.PNG" alt="resim" width="auto" height="180" align="top">
+
+- 3.Test: <img src="https://github.com/IES-YunusEmreKarahan/Labirent_Sicak-Soguk/blob/main/MyMazeLibraryPerformans/screenshots/BFS3.PNG" alt="resim" width="auto" height="180" align="top">
+
+## Sonuclar
+### **10x10 Labirent Sonucları**
+- 1.Test: <img src="https://github.com/IES-YunusEmreKarahan/Labirent_Sicak-Soguk/blob/main/MyMazeLibraryPerformans/screenshots/10x10Test1.png" alt="resim" width="500" height="auto" align="top">
+
+- 2.Test: <img src="https://github.com/IES-YunusEmreKarahan/Labirent_Sicak-Soguk/blob/main/MyMazeLibraryPerformans/screenshots/10x10Test2.png" alt="resim" width="500" height="auto" align="top">
+
+- 3.Test: <img src="https://github.com/IES-YunusEmreKarahan/Labirent_Sicak-Soguk/blob/main/MyMazeLibraryPerformans/screenshots/10x10Test3.png" alt="resim" width="500" height="auto" align="top">
+
+### **100x100 Labirent Sonucları**
+- 1.Test: <img src="https://github.com/IES-YunusEmreKarahan/Labirent_Sicak-Soguk/blob/main/MyMazeLibraryPerformans/screenshots/100x100Test1.PNG" alt="resim" width="500" height="auto" align="top">
+
+- 2.Test: <img src="https://github.com/IES-YunusEmreKarahan/Labirent_Sicak-Soguk/blob/main/MyMazeLibraryPerformans/screenshots/100x100Test2.PNG" alt="resim" width="500" height="auto" align="top">
+
+- 3.Test: <img src="https://github.com/IES-YunusEmreKarahan/Labirent_Sicak-Soguk/blob/main/MyMazeLibraryPerformans/screenshots/100x100Test3.PNG" alt="resim" width="500" height="auto" align="top">
+
+### **1000x1000 Labirent Sonucları**
+- 1.Test: <img src="https://github.com/IES-YunusEmreKarahan/Labirent_Sicak-Soguk/blob/main/MyMazeLibraryPerformans/screenshots/1000x1000Test1.PNG" alt="resim" width="500" height="auto" align="top">
+
+- 2.Test: <img src="https://github.com/IES-YunusEmreKarahan/Labirent_Sicak-Soguk/blob/main/MyMazeLibraryPerformans/screenshots/1000x1000Test2.PNG" alt="resim" width="500" height="auto" align="top">
+
+- 3.Test: <img src="https://github.com/IES-YunusEmreKarahan/Labirent_Sicak-Soguk/blob/main/MyMazeLibraryPerformans/screenshots/1000x1000Test3.PNG" alt="resim" width="500" height="auto" align="top">

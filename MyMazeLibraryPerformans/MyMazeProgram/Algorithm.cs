@@ -77,7 +77,7 @@
     }
 
     // BFS
-    public static List<BFSNode> BFS(string[,] maze, BFSPosition start, BFSPosition end)
+    public static List<BFSNode> BFS(string[,] maze, BFSPosition start, BFSPosition end) // BFS
     {
         int rows = maze.GetLength(0);
         int cols = maze.GetLength(1);
@@ -134,7 +134,7 @@
     }
 
     //Greedy
-    public static List<GreedyPosition> Greedy(string[,] maze, GreedyPosition start, GreedyPosition end)
+    public static List<GreedyPosition> Greedy(string[,] maze, GreedyPosition start, GreedyPosition end) // Greedy
     {
         int rows = maze.GetLength(0);
         int cols = maze.GetLength(1);
